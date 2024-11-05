@@ -1,21 +1,46 @@
+# Referencias
+
 project:
   type: manuscript
 
 manuscript:
   article: index.qmd
+  # presentation: ppt.qmd
 
 format:
   html:
+    toc: true
+    fig-format: svg
     comments:
       hypothesis: true
   docx: default
   jats: default
-
   # (other formats)
   # pdf: default
+
+author:
+  name: Ian Contreras
+  emails:
+    - personal: contreras.mejia@hotmail.com
+    - institutional: 1116048@est.intec.edu.do
+  telephone: 809-856-0531
+  affiliations:
+    id: 1116048
+    name: Instituto Tecnológico de Santo Domingo
+    department: Economía y Negocios
+    city: Santo Domingo
+    country: República Dominicana
+  attributes:
+    corresponding: true
+  note: Lorem Ipsum
+
+bibliography: references.bib
+
+lang: es
+
+date: last-modified
 
 execute:
   freeze: true
   cache: true
-
 

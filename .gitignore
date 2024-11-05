@@ -3,3 +3,5 @@ fuentes/
 elsevier_citation_example.qmd
 test*
 *.log
+*.xlsx
+*.xls
