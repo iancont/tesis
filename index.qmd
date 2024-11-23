@@ -42,19 +42,12 @@ La determinación del régimen óptimo de coordinación económica representa un
 
 ## Propósito de la Investigación
 
-<!-- 
-Ayudame a redactar el proposito de la investigacion. ESte debe tomar alrededor de 150-200 palabras, en dos parrafos de redaccion continua sin bulletpoints. 
+Este estudio contribuye a la literatura de política económica mediante el análisis de los regímenes de coordinación óptimos entre la política monetaria y fiscal en la República Dominicana, empleando un marco teórico de juegos para una economía pequeña y abierta. La investigación desarrolla un modelo de equilibrio general dinámico y estocástico (DSGE) que incorpora las características fundamentales de la economía dominicana, incluyendo una restricción intertemporal consolidada para las instituciones gubernamentales y un mecanismo de transmisión del tipo de cambio a la inflación. Este enfoque permite examinar las interacciones estratégicas entre las autoridades monetarias y fiscales bajo diferentes escenarios de coordinación, contribuyendo así a la comprensión de las implicaciones del déficit cuasifiscal del Banco Central.
 
-
-Toma como referencia esta:
-
-As a result, the contribution of this study can be summarized as follows. First, the study makes a new contribution to the literature with the game-theoretical analysis of the leader-follower setting between the monetary and fiscal policies we have developed for the small-scale open economy. Secondly, thorough policy analysis in the framework of counterfactual experiments has not been previously performed for the Turkish economy. With this information in mind, the rest of the study is organized as follows. The second section presents the related literature. The third section introduces the small-scale open economy and the dynamic equations that describe it and then discusses the interaction between policymakers within the framework of game theory. Moreover, the interaction between policymakers in small open economies is assessed as the Stackelberg leader-follower game and alternative monetary and fiscal policy rules are derived for the situation in this scenario. In the fourth section, numerical analysis of game theoretically derived models is introduced. In this context, the parameters of the DSGE model are calibrated taking into account the data from the Turkish economy in the 2006:01 - 2019:12 period, and each scenario is analyzed through dynamic simulation. In the framework of counterfactual experiments, utilizing the impulse-response and social loss analysis obtained with dynamic simulation, the policy mix that would result from the least social loss for the Turkish economy is investigated. Concluding remarks and policy suggestions are presented in the fifth section.
-
-
-
- -->
+La metodología propuesta se distingue por tres aspectos innovadores. Primero, desarrolla un análisis basado en teoría de juegos del esquema líder-seguidor entre las políticas monetaria y fiscal, específicamente adaptado para una economía pequeña y abierta como la dominicana. Segundo, implementa un conjunto de experimentos contrafactuales utilizando datos del período 2012-2024, que permitirán evaluar diferentes regímenes de coordinación y sus implicaciones para el bienestar social. Tercero, incorpora un análisis de sensibilidad global que examina la robustez de los resultados ante variaciones en los parámetros estructurales del modelo, proporcionando así una evaluación comprehensiva de la estabilidad y unicidad de los equilibrios encontrados. Esta aproximación metodológica permite identificar el régimen de coordinación que minimiza las pérdidas sociales, ofreciendo recomendaciones de política económica basadas en evidencia cuantitativa.
 
 ## Preguntas de Investigación
+
 
 # Revisión Literaria
 
