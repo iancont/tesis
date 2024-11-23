@@ -15,8 +15,7 @@ format:
       hypothesis: true
   docx: default
   jats: default
-  # (other formats)
-  # pdf: default
+
 
 author:
   name: Ian Contreras
@@ -34,6 +33,13 @@ author:
     corresponding: true
   note: Lorem Ipsum
 
+filters:
+  - watermark
+  - inline-svg
+watermark:
+  text: "Borrador"
+  size: 1.5
+  opacity: 0.2
 bibliography: references.bib
 
 lang: es

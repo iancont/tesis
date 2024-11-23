@@ -3,6 +3,7 @@ title: Short Paper
 subtitle: A Short Subtitle
 abstract: |
   This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.
+toc: true
 keywords: 
   - keyword1
   - keyword2
@@ -11,16 +12,73 @@ format:
     keep-tex: true
     journal:
       name: Journal Name
-      formatting: preprint
+      formatting: review
       cite-style: authoryear
 nocite: |
   @*
 ---
 
-## Section
-This is a simple placeholder for the manuscript's main document [@knuth84].
+# Introducción
 
-TEST
+## Planteamiento del Problema
+
+La coexistencia de dos emisores de deuda gubernamental se ha convertido en uno de los puntos más cuestionados en la economía dominicana de la última década. La principal crítica radica en que el Banco Central realiza una gestión ineficiente de su deuda, reflejada en la evolución negativa de su patrimonio. No obstante, dado que el Banco Central opera bajo un régimen de flotación sucia, en el cual la emisión de deuda funciona como herramienta de control de liquidez (quantitative tightening), resulta inapropiado evaluar su manejo de pasivos desde una óptica meramente contable.
+
+El origen de esta dualidad en la emisión de deuda pública se remonta a la crisis financiera de 2003-2004, cuando el colapso de tres importantes instituciones bancarias (Baninter, Bancrédito y Banco Mercantil) provocó una intervención masiva del Banco Central para evitar un riesgo sistémico. El rescate bancario, que representó aproximadamente el 20.3% del PIB, resultó en una emisión de RD$109,150 millones en instrumentos de deuda por parte del Banco Central. Esta intervención, si bien necesaria para mantener la estabilidad del sistema financiero, generó un deterioro significativo en el balance del banco central y dio origen a un déficit cuasifiscal que persiste hasta la actualidad, condicionando tanto el manejo de la política monetaria como fiscal. [@oecd_mercado_2012]
+
+La problemática actual presenta cuatro dimensiones críticas interrelacionadas. En primer lugar, existen desafíos significativos en la coordinación de las políticas monetaria y fiscal en un contexto de vulnerabilidad de la balanza de pagos. República Dominicana, como importador neto de commodities, enfrenta limitaciones estructurales para contrarrestar los choques externos en los precios de importación, lo que genera presiones recurrentes sobre el tipo de cambio y condiciona la efectividad de la política monetaria. Esta situación se refleja en un déficit persistente en cuenta corriente, que ha alcanzado niveles cercanos al 8% del PIB en años recientes.
+
+En segundo lugar, la competencia entre el Banco Central y el Ministerio de Hacienda en el mercado de deuda pública ha resultado en un aumento de los costos de financiamiento, particularmente en el tramo medio de la curva de tasas de interés. La falta de coordinación entre ambas instituciones se manifiesta en diferenciales significativos de tasas para instrumentos de similar vencimiento, llegando a superar los 350 puntos base en algunos casos. Esta divergencia en las tasas de colocación refleja objetivos institucionales distintos: mientras el Ministerio de Hacienda busca minimizar el costo del financiamiento público, el Banco Central utiliza la emisión de deuda como instrumento de política monetaria para controlar la liquidez y estabilizar el tipo de cambio. [@oecd_mercado_2012]
+
+El tercer aspecto crítico concierne a la evolución del déficit cuasifiscal y sus implicaciones para las expectativas inflacionarias en el marco de la curva de Phillips. La acumulación de pérdidas operativas del Banco Central, que se ha intensificado desde la crisis de 2003-2004, genera preocupaciones sobre la sostenibilidad de largo plazo de este esquema de política monetaria. La literatura empírica sugiere que los déficits cuasifiscales significativos pueden eventualmente resultar en presiones inflacionarias, sea a través de la monetización directa del déficit o mediante el deterioro de las expectativas de los agentes económicos. [@cruz-rodriguez_deficit_2006]
+
+Un cuarto elemento crítico radica en las limitaciones constitucionales que enfrenta el Banco Central para financiar al gobierno central en el mercado de bonos. Esta restricción, que solo puede ser levantada en circunstancias excepcionales y bajo condiciones estrictas, reduce significativamente los instrumentos disponibles para el control de la depreciación del tipo de cambio. 
+
+El debate sobre la reforma de este esquema institucional ha generado dos posiciones principales. Por un lado, algunos economistas, abogan por la consolidación de la deuda gubernamental bajo el Ministerio de Hacienda, argumentando que la gestión actual ha sido ineficiente y ha resultado en un crecimiento significativo de la deuda del Banco Central, que actualmente representa aproximadamente el 15% del PIB. Esta posición sugiere que la centralización del manejo de la deuda en un solo emisor soberano permitiría mejorar las condiciones de emisión y reducir los costos de financiamiento.
+
+La posición contraria sostiene que, dada la diferente naturaleza de las funciones de reacción de ambas instituciones, la unificación de la emisión de deuda podría ser contraproducente para el logro de sus respectivos objetivos. Además, argumentan que el Banco Central perdería su instrumento más efectivo para controlar las presiones sobre el tipo de cambio, lo cual podría comprometer la estabilidad macroeconómica en un contexto de alta vulnerabilidad externa.
+
+La determinación del régimen óptimo de coordinación económica representa uno de los mayores desafíos de política económica que enfrenta la República Dominicana actualmente. Esta problemática presenta dos dimensiones fundamentales: por un lado, la necesidad de establecer mecanismos efectivos de coordinación entre las autoridades monetarias y financieras, y por otro, la identificación de los instrumentos más adecuados para alcanzar los objetivos de política. La complejidad de este reto radica en la necesidad de adoptar una perspectiva multidimensional que considere los diferentes equilibrios económicos implicados. El mecanismo actual de control de liquidez presenta un dilema fundamental: ¿es preferible mantener una política con mayor costo económico que ha demostrado efectividad en el control de las expectativas cambiarias, o este enfoque representa un riesgo insostenible para las finanzas del Banco Central en el largo plazo? La resolución de esta disyuntiva requiere la consideración de múltiples factores, incluyendo la prima de riesgo por intervención de liquidez, la competencia en los tramos corto y medio de la curva de intereses, y las implicaciones de la "aritmética monetarista desagradable". Como resultado, la búsqueda de un marco institucional óptimo que balancee estos diferentes objetivos y restricciones se mantiene como una pregunta abierta en el diseño de la política económica dominicana.
+
+## Propósito de la Investigación
+
+<!-- 
+Ayudame a redactar el proposito de la investigacion. ESte debe tomar alrededor de 150-200 palabras, en dos parrafos de redaccion continua sin bulletpoints. 
+
+
+Toma como referencia esta:
+
+As a result, the contribution of this study can be summarized as follows. First, the study makes a new contribution to the literature with the game-theoretical analysis of the leader-follower setting between the monetary and fiscal policies we have developed for the small-scale open economy. Secondly, thorough policy analysis in the framework of counterfactual experiments has not been previously performed for the Turkish economy. With this information in mind, the rest of the study is organized as follows. The second section presents the related literature. The third section introduces the small-scale open economy and the dynamic equations that describe it and then discusses the interaction between policymakers within the framework of game theory. Moreover, the interaction between policymakers in small open economies is assessed as the Stackelberg leader-follower game and alternative monetary and fiscal policy rules are derived for the situation in this scenario. In the fourth section, numerical analysis of game theoretically derived models is introduced. In this context, the parameters of the DSGE model are calibrated taking into account the data from the Turkish economy in the 2006:01 - 2019:12 period, and each scenario is analyzed through dynamic simulation. In the framework of counterfactual experiments, utilizing the impulse-response and social loss analysis obtained with dynamic simulation, the policy mix that would result from the least social loss for the Turkish economy is investigated. Concluding remarks and policy suggestions are presented in the fifth section.
+
+
+
+ -->
+
+## Preguntas de Investigación
+
+# Revisión Literaria
+
+# Metodología
+
+## Un modelo DSGE neokeynesiano para la economía dominicana
+
+## Derivación de las curvas de reacción bajo un regimen de independencia total.
+
+## Derivación de las curvas de reacción bajo un regimen de dominancia fiscal
+
+## Derivación de la curva de reacción bajo un regimen de dominancia monetaria
+
+## Calibración paramétrica para la simulación dinámica
+
+# Resultados
+
+## Análisis de perdidas sociales: Determinación del regimen de interacción óptimo
+
+## Análisis de los choques estructurales: Función de impulso-reacción
+
+## Análisis de sensibilidad: Evaluación de la estabilidad paramétrica por filtro de Monte Carlo
+
+# Conclusiones y Recomendaciones
 
 # Referencias
 

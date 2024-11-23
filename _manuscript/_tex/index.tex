@@ -5,7 +5,7 @@
 %
 \documentclass[
   authoryear,
-  preprint]{elsarticle}
+  review]{elsarticle}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -135,6 +135,39 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \journal{Journal Name}
+\makeatletter
+\@ifpackageloaded{fontspec}{}{\usepackage{fontspec}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{draftwatermark}{}{\usepackage{draftwatermark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{xcolor}{}{\usepackage{xcolor}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{forloop}{}{\usepackage{forloop}}
+\makeatother
+    \definecolor{watermark}{HTML}{000000}
+    
+    \newcounter{watermarkrow}
+    \newcounter{watermarkcol}
+
+    \DraftwatermarkOptions{
+      text={
+        \begin{tabular}{c}
+          \forloop{watermarkrow}{0}{\value{watermarkrow} < 50}{
+            \forloop{watermarkcol}{0}{\value{watermarkcol} < 10}{
+              { Borrador}\hspace{4.000000em}
+            }
+            \\[4.000000em]
+          }
+        \end{tabular}
+      },
+      fontsize=1.500000em,
+      angle=15.000000,
+      color=watermark!20
+    }
+    
 
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -204,13 +237,159 @@ tempus elit.
 \end{keyword}
 \end{frontmatter}
     
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
 
-\subsection{Section}\label{section}
+\section{Introducción}\label{introducciuxf3n}
 
-This is a simple placeholder for the manuscript's main document
-\citep{knuth84}.
+\subsection{Planteamiento del
+Problema}\label{planteamiento-del-problema}
 
-TEST
+La coexistencia de dos emisores de deuda gubernamental se ha convertido
+en uno de los puntos más cuestionados en la economía dominicana de la
+última década. La principal crítica radica en que el Banco Central
+realiza una gestión ineficiente de su deuda, reflejada en la evolución
+negativa de su patrimonio. No obstante, dado que el Banco Central opera
+bajo un régimen de flotación sucia, en el cual la emisión de deuda
+funciona como herramienta de control de liquidez (quantitative
+tightening), resulta inapropiado evaluar su manejo de pasivos desde una
+óptica meramente contable.
+
+El origen de esta dualidad en la emisión de deuda pública se remonta a
+la crisis financiera de 2003-2004, cuando el colapso de tres importantes
+instituciones bancarias (Baninter, Bancrédito y Banco Mercantil) provocó
+una intervención masiva del Banco Central para evitar un riesgo
+sistémico. El rescate bancario, que representó aproximadamente el 20.3\%
+del PIB, resultó en una emisión de RD\$109,150 millones en instrumentos
+de deuda por parte del Banco Central. Esta intervención, si bien
+necesaria para mantener la estabilidad del sistema financiero, generó un
+deterioro significativo en el balance del banco central y dio origen a
+un déficit cuasifiscal que persiste hasta la actualidad, condicionando
+tanto el manejo de la política monetaria como fiscal.
+\citep{oecd_mercado_2012}
+
+La problemática actual presenta tres dimensiones críticas
+interrelacionadas. En primer lugar, existen desafíos significativos en
+la coordinación de las políticas monetaria y fiscal en un contexto de
+vulnerabilidad de la balanza de pagos. República Dominicana, como
+importador neto de commodities, enfrenta limitaciones estructurales para
+contrarrestar los choques externos en los precios de importación, lo que
+genera presiones recurrentes sobre el tipo de cambio y condiciona la
+efectividad de la política monetaria. Esta situación se refleja en un
+déficit persistente en cuenta corriente, que ha alcanzado niveles
+cercanos al 8\% del PIB en años recientes.
+
+En segundo lugar, la competencia entre el Banco Central y el Ministerio
+de Hacienda en el mercado de deuda pública ha resultado en un aumento de
+los costos de financiamiento, particularmente en el tramo medio de la
+curva de tasas de interés. La falta de coordinación entre ambas
+instituciones se manifiesta en diferenciales significativos de tasas
+para instrumentos de similar vencimiento, llegando a superar los 350
+puntos base en algunos casos. Esta divergencia en las tasas de
+colocación refleja objetivos institucionales distintos: mientras el
+Ministerio de Hacienda busca minimizar el costo del financiamiento
+público, el Banco Central utiliza la emisión de deuda como instrumento
+de política monetaria para controlar la liquidez y estabilizar el tipo
+de cambio. \citep{oecd_mercado_2012}
+
+El tercer aspecto crítico concierne a la evolución del déficit
+cuasifiscal y sus implicaciones para las expectativas inflacionarias en
+el marco de la curva de Phillips. La acumulación de pérdidas operativas
+del Banco Central, que se ha intensificado desde la crisis de 2003-2004,
+genera preocupaciones sobre la sostenibilidad de largo plazo de este
+esquema de política monetaria. La literatura empírica sugiere que los
+déficits cuasifiscales significativos pueden eventualmente resultar en
+presiones inflacionarias, sea a través de la monetización directa del
+déficit o mediante el deterioro de las expectativas de los agentes
+económicos. \citep{cruz-rodriguez_deficit_2006}
+
+El debate sobre la reforma de este esquema institucional ha generado dos
+posiciones principales. Por un lado, algunos economistas, abogan por la
+consolidación de la deuda gubernamental bajo el Ministerio de Hacienda,
+argumentando que la gestión actual ha sido ineficiente y ha resultado en
+un crecimiento significativo de la deuda del Banco Central, que
+actualmente representa aproximadamente el 15\% del PIB. Esta posición
+sugiere que la centralización del manejo de la deuda en un solo emisor
+soberano permitiría mejorar las condiciones de emisión y reducir los
+costos de financiamiento.
+
+La posición contraria sostiene que, dada la diferente naturaleza de las
+funciones de reacción de ambas instituciones, la unificación de la
+emisión de deuda podría ser contraproducente para el logro de sus
+respectivos objetivos. Además, argumentan que el Banco Central perdería
+su instrumento más efectivo para controlar las presiones sobre el tipo
+de cambio, lo cual podría comprometer la estabilidad macroeconómica en
+un contexto de alta vulnerabilidad externa.
+
+La determinación del régimen óptimo de coordinación económica representa
+uno de los mayores desafíos de política económica que enfrenta la
+República Dominicana actualmente. Esta problemática presenta dos
+dimensiones fundamentales: por un lado, la necesidad de establecer
+mecanismos efectivos de coordinación entre las autoridades monetarias y
+financieras, y por otro, la identificación de los instrumentos más
+adecuados para alcanzar los objetivos de política. La complejidad de
+este reto radica en la necesidad de adoptar una perspectiva
+multidimensional que considere los diferentes equilibrios económicos
+implicados. El mecanismo actual de control de liquidez presenta un
+dilema fundamental: ¿es preferible mantener una política con mayor costo
+económico que ha demostrado efectividad en el control de las
+expectativas cambiarias, o este enfoque representa un riesgo
+insostenible para las finanzas del Banco Central en el largo plazo? La
+resolución de esta disyuntiva requiere la consideración de múltiples
+factores, incluyendo la prima de riesgo por intervención de liquidez, la
+competencia en los tramos corto y medio de la curva de intereses, y las
+implicaciones de la ``aritmética monetarista desagradable''. Como
+resultado, la búsqueda de un marco institucional óptimo que balancee
+estos diferentes objetivos y restricciones se mantiene como una pregunta
+abierta en el diseño de la política económica dominicana.
+
+\subsection{Propósito de la
+Investigación}\label{propuxf3sito-de-la-investigaciuxf3n}
+
+\subsection{Preguntas de
+Investigación}\label{preguntas-de-investigaciuxf3n}
+
+\section{Revisión Literaria}\label{revisiuxf3n-literaria}
+
+\section{Metodología}\label{metodologuxeda}
+
+\subsection{Un modelo DSGE neokeynesiano para la economía
+dominicana}\label{un-modelo-dsge-neokeynesiano-para-la-economuxeda-dominicana}
+
+\subsection{Derivación de las curvas de reacción bajo un regimen de
+independencia
+total.}\label{derivaciuxf3n-de-las-curvas-de-reacciuxf3n-bajo-un-regimen-de-independencia-total.}
+
+\subsection{Derivación de las curvas de reacción bajo un regimen de
+dominancia
+fiscal}\label{derivaciuxf3n-de-las-curvas-de-reacciuxf3n-bajo-un-regimen-de-dominancia-fiscal}
+
+\subsection{Derivación de la curva de reacción bajo un regimen de
+dominancia
+monetaria}\label{derivaciuxf3n-de-la-curva-de-reacciuxf3n-bajo-un-regimen-de-dominancia-monetaria}
+
+\subsection{Calibración paramétrica para la simulación
+dinámica}\label{calibraciuxf3n-paramuxe9trica-para-la-simulaciuxf3n-dinuxe1mica}
+
+\section{Resultados}\label{resultados}
+
+\subsection{Análisis de perdidas sociales: Determinación del regimen de
+interacción
+óptimo}\label{anuxe1lisis-de-perdidas-sociales-determinaciuxf3n-del-regimen-de-interacciuxf3n-uxf3ptimo}
+
+\subsection{Análisis de los choques estructurales: Función de
+impulso-reacción}\label{anuxe1lisis-de-los-choques-estructurales-funciuxf3n-de-impulso-reacciuxf3n}
+
+\subsection{Análisis de sensibilidad: Evaluación de la estabilidad
+paramétrica por filtro de Monte
+Carlo}\label{anuxe1lisis-de-sensibilidad-evaluaciuxf3n-de-la-estabilidad-paramuxe9trica-por-filtro-de-monte-carlo}
+
+\section{Conclusiones y
+Recomendaciones}\label{conclusiones-y-recomendaciones}
 
 \section{Referencias}\label{referencias}
 
