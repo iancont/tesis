@@ -44,14 +44,24 @@ La determinación del régimen óptimo de coordinación económica representa un
 
 Este estudio contribuye a la literatura de política económica mediante el análisis de los regímenes de coordinación óptimos entre la política monetaria y fiscal en la República Dominicana, empleando un marco teórico de juegos para una economía pequeña y abierta. La investigación desarrolla un modelo de equilibrio general dinámico y estocástico (DSGE) que incorpora las características fundamentales de la economía dominicana, incluyendo una restricción intertemporal consolidada para las instituciones gubernamentales y un mecanismo de transmisión del tipo de cambio a la inflación. Este enfoque permite examinar las interacciones estratégicas entre las autoridades monetarias y fiscales bajo diferentes escenarios de coordinación, contribuyendo así a la comprensión de las implicaciones del déficit cuasifiscal del Banco Central.
 
-La metodología propuesta se distingue por tres aspectos innovadores. Primero, desarrolla un análisis basado en teoría de juegos del esquema líder-seguidor entre las políticas monetaria y fiscal, específicamente adaptado para una economía pequeña y abierta como la dominicana. Segundo, implementa un conjunto de experimentos contrafactuales utilizando datos del período 2012-2024, que permitirán evaluar diferentes regímenes de coordinación y sus implicaciones para el bienestar social. Tercero, incorpora un análisis de sensibilidad global que examina la robustez de los resultados ante variaciones en los parámetros estructurales del modelo, proporcionando así una evaluación comprehensiva de la estabilidad y unicidad de los equilibrios encontrados. Esta aproximación metodológica permite identificar el régimen de coordinación que minimiza las pérdidas sociales, ofreciendo recomendaciones de política económica basadas en evidencia cuantitativa.
+La metodología propuesta se distingue por tres aspectos innovadores. Primero, desarrolla un análisis basado en teoría de juegos del esquema líder-seguidor entre las políticas monetaria y fiscal, específicamente adaptado para una economía pequeña y abierta como la dominicana. Segundo, implementa un conjunto de experimentos contrafactuales utilizando parámetros estructurales del período 2012-2024, que permitirán evaluar diferentes regímenes de coordinación y sus implicaciones para el bienestar social. Tercero, incorpora un análisis de sensibilidad global que examina la robustez de los resultados ante variaciones en los parámetros estructurales del modelo, proporcionando así una evaluación comprehensiva de la estabilidad y unicidad de los equilibrios encontrados. Esta aproximación metodológica permite identificar el régimen de coordinación que minimiza las pérdidas sociales, ofreciendo recomendaciones de política económica basadas en evidencia cuantitativa.
 
 ## Preguntas de Investigación
 
+1. ¿Cuál es el esquema óptimo de coordinación de políticas fiscales y monetarias en el contexto de la economía dominicana?
+
+2. ¿Cuál es el dominio de los parámetros estructurales de forma que se asegura la estabilidad del regimen de coordinación óptimo?
+
+3. ¿Qué reformas y/o instrumentos alternativos podrían ser necesarios para alcanzar el esquema de coordinación óptimo previamente definido?
 
 # Revisión Literaria
+<!-- 
+Duracion aproximada: 700 palabras
 
-# Metodología
+Antecedentes
+
+
+ -->
 
 ## Un modelo DSGE neokeynesiano para la economía dominicana
 
