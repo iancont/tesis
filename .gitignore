@@ -7,3 +7,5 @@ test*
 *.xls
 others/
 .vscode/
+
+/.luarc.json

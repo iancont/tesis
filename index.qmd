@@ -10,8 +10,10 @@ keywords:
 # author-note:
 #   disclosures: |
 #     Este trabajo 
-format:
+format: 
   apaquarto-pdf: default
+  apaquarto-docx: 
+    tex-align: justify
 nocite: |
   @*
 ---
@@ -94,6 +96,22 @@ Basándonos en los precedentes planteados por [@ramirez_modelo_2014] y [@perez_p
 
 La estructura del modelo incorpora diversos canales de transmisión y fuentes de choques, donde la curva de Phillips caracteriza una oferta agregada con precios rígidos que no se ajustan instantáneamente a cambios en costos o demanda. El mecanismo de transmisión internacional opera a través del tipo de cambio nominal y la paridad descubierta de tasas de interés, permitiendo que los choques externos afecten a la economía doméstica. El modelo considera cinco fuentes principales de incertidumbre: choques de política monetaria, productividad, preferencias, tasa de interés internacional y nivel de precios mundial. La regla de política monetaria óptima se deriva de al comparar los equilibrios generales resultantes de las intereacciónes entre el Banco Central y el Ministerio de Hacienda en los distintos regímenes de coordinación.
 
+<!-- 
+Me gustaría incluir un parrafo explicando como este modelo simplificado maneja 
+1) La interaccion entre la deuda gubernamental y el deficit cuasifiscal. 
+2) La existencia de dos emisores gubernamentales. 
+ -->
+
+### Equilibrio en el mercado de bienes
+
+El equilibrio dinámico en el mercado de bienes en términos de brecha del producto se expresa como:
+
+$$
+\hat{y}_t = E_t\{\hat{y}_{t+1}\} - \frac{1}{\sigma_a}(r_t - E_t\{\pi_{H,t+1}\} - r^N) - E_t\{\Delta\xi_{t+1}\}
+$$ {#eq-is}
+
+La curva IS dinámica @eq-is está influenciada por una combinación de tasas de interés tanto de corto como de largo plazo, donde la tasa de interés real natural $r^N$ sirve como punto de referencia para evaluar la postura de la política monetaria. La autoridad monetaria tiene dos vías para influir en esta tasa. En primer lugar, puede utilizar ajustes en la tasa de interés nominal de corto plazo como herramienta para controlar las fluctuaciones del producto y mantener la inflación doméstica dentro de los límites establecidos. En segundo lugar, cuando los bonos no son perfectamente sustituibles entre sí, emerge un mecanismo adicional de transmisión de la política monetaria que puede afectar la demanda agregada, como sucede en el caso dominicano. 
+
 
 ## Derivación de las curvas de reacción bajo un regimen de independencia total.
 
@@ -115,7 +133,12 @@ La estructura del modelo incorpora diversos canales de transmisión y fuentes de
 
 {{< pagebreak >}}
 
+<!-- [¹] Algunas tasas de corto plazo son la TPM, la tasa repo y la overnight.  -->
+
 # Referencias
 
 ::: {#refs}
 :::
+
+# Appendix
+
