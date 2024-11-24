@@ -13,10 +13,22 @@ format:
   #   fig-format: svg
   #   comments:
   #     hypothesis: true
-  apaquarto-docx: default
-  apaquarto-html: default
-  apaquarto-pdf: default
-  apaquarto-typst: default
+  apaquarto-docx:
+    filters:
+      - at: pre-quarto
+        path: _extensions/andrewheiss/wordcount/wordcount.lua
+  apaquarto-html: 
+    filters:
+      - at: pre-quarto
+        path: _extensions/andrewheiss/wordcount/wordcount.lua
+  apaquarto-pdf:
+      filters:
+      - at: pre-quarto
+        path: _extensions/andrewheiss/wordcount/wordcount.lua
+  apaquarto-typst:
+      filters:
+      - at: pre-quarto
+        path: _extensions/andrewheiss/wordcount/wordcount.lua
 
 
 author:

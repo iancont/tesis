@@ -52,6 +52,8 @@ La metodología propuesta se distingue por tres aspectos innovadores. Primero, d
 
 3. ¿Qué reformas y/o instrumentos alternativos podrían ser necesarios para alcanzar el esquema de coordinación óptimo previamente definido?
 
+{{< pagebreak >}}
+
 # Revisión Literaria
 
 ## Marco teórico
@@ -82,6 +84,7 @@ La literatura sobre coordinación de políticas económicas en la República Dom
 
 La presente investigación se construye sobre estos antecedentes de manera integral, combinando el marco metodológico de teoría de juegos desarrollado por Tetik con las estimaciones de parámetros estructurales de Ramírez y los hallazgos sobre reglas monetarias óptimas de Pérez. Esta síntesis permite desarrollar un marco analítico robusto que examina por primera vez las interacciones estratégicas entre autoridades monetaria y fiscal en la República Dominicana.
 
+{{< pagebreak >}}
 
 # Estructura del Modelo
 
@@ -90,7 +93,6 @@ La presente investigación se construye sobre estos antecedentes de manera integ
 Basándonos en los precedentes planteados por [@ramirez_modelo_2014] y [@perez_perez_nueva_2021], la economía dominicana se puede caracterizar de manera adecuada por un modelo de equilibrio general neokeynesiano de una economía pequeña y abierta que incorpora fricciones financieras en el mercado de bonos gubernamentales, planteado en [@gali_monetary_2015]. El modelo está habitado por cuatro agentes económicos principales que optimizan sus decisiones: los hogares, que enfrentan costos de ajuste de portafolio al distribuir sus recursos entre bonos de corto y largo plazo; las firmas domésticas que operan en competencia monopolística; los importadores; y el gobierno como autoridad de política fiscal y el Banco Central como la autoridad monetaria. La característica distintiva del modelo es la incorporación de rigideces nominales de precios tipo Calvo, impuestos distorsionadores, y un pass-through completo del tipo de cambio, donde la demanda agregada depende de un promedio ponderado de las tasas de interés de corto y largo plazo.
 
 La estructura del modelo incorpora diversos canales de transmisión y fuentes de choques, donde la curva de Phillips caracteriza una oferta agregada con precios rígidos que no se ajustan instantáneamente a cambios en costos o demanda. El mecanismo de transmisión internacional opera a través del tipo de cambio nominal y la paridad descubierta de tasas de interés, permitiendo que los choques externos afecten a la economía doméstica. El modelo considera cinco fuentes principales de incertidumbre: choques de política monetaria, productividad, preferencias, tasa de interés internacional y nivel de precios mundial. La regla de política monetaria óptima se deriva de al comparar los equilibrios generales resultantes de las intereacciónes entre el Banco Central y el Ministerio de Hacienda en los distintos regímenes de coordinación.
-
 
 
 ## Derivación de las curvas de reacción bajo un regimen de independencia total.
@@ -110,6 +112,8 @@ La estructura del modelo incorpora diversos canales de transmisión y fuentes de
 ## Análisis de sensibilidad: Evaluación de la estabilidad paramétrica por filtro de Monte Carlo
 
 # Conclusiones y Recomendaciones
+
+{{< pagebreak >}}
 
 # Referencias
 
