@@ -8,13 +8,15 @@ manuscript:
   # presentation: ppt.qmd
 
 format:
-  html:
-    toc: true
-    fig-format: svg
-    comments:
-      hypothesis: true
-  docx: default
-  jats: default
+  # html:
+  #   toc: true 
+  #   fig-format: svg
+  #   comments:
+  #     hypothesis: true
+  apaquarto-docx: default
+  apaquarto-html: default
+  apaquarto-pdf: default
+  apaquarto-typst: default
 
 
 author:
