@@ -62,5 +62,4 @@ date: last-modified
 
 execute:
   freeze: true
-  cache: true
-
+  cache: true 

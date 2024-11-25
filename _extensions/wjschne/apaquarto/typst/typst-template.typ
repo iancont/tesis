@@ -35,7 +35,7 @@
   leading: 18pt,
   spacing: 18pt,
   firstlineindent: 0.5in,
-  toc: false,
+  toc: true,
   lang: "en",
   cols: 1,
   doc,
@@ -51,9 +51,12 @@
       align(right)[#counter(page).display()]
     )
   )
+  set bibliography(
+    style: "apa.csl",
+    title: "Referencias",
+    full: true
+  )
 
-
- 
 if sys.version.at(1) >= 11 or sys.version.at(0) > 0 {
   set table(    
     stroke: (x, y) => (
@@ -155,6 +158,5 @@ if sys.version.at(1) >= 11 or sys.version.at(0) > 0 {
   } else {
     columns(cols, gutter: 4%, doc)
   }
-
 
 }

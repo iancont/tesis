@@ -11,13 +11,21 @@ keywords:
 #   disclosures: |
 #     Este trabajo 
 format: 
-  apaquarto-pdf: default
-  apaquarto-docx: 
-    tex-align: justify
+  typst: default
+  # apaquarto-typst: 
+  #   toc: true
+  #   keep-typ: true
+  #   toc-title: Tabla de Contenido
+  #   tex-align: justify
+  # apaquarto-docx: 
+  #   tex-align: justify
+  #   toc: true
+  #   toc-title: Tabla de Contenido
 nocite: |
-  @*
+  @* 
 ---
 
+<!-- {{< pagebreak >}} -->
 # Introducción
 
 ## Planteamiento del Problema
@@ -64,7 +72,7 @@ El análisis de la política monetaria se ha centrado históricamente en respond
 
 La discusión sobre reglas versus discrecionalidad en política monetaria tiene sus raíces en los trabajos seminales de [@kydland_rules_1977] y [@barro_rules_1983], quienes demostraron que la extrema flexibilidad o discrecionalidad en el manejo monetario conduce a una pérdida de credibilidad, afectando directamente el objetivo de estabilización y generando un "sesgo inflacionario". Este hallazgo fundamental llevó al desarrollo de un marco analítico basado en reglas monetarias que pudieran servir como guía para las intervenciones de los bancos centrales.
 
-[@taylor_discretion_1993] marcó un hito en esta literatura al proponer una regla simple que relaciona la tasa de interés nominal con las desviaciones de la inflación respecto a su nivel objetivo y las desviaciones del producto respecto a su nivel potencial. Su trabajo demostró que las políticas monetarias centradas en estos objetivos son más eficientes que aquellas que se ajustan con la oferta de dinero y el tipo de cambio. [@svensson_inflation_1997]y [@clarida_science_1999] posteriormente formalizaron los fundamentos teóricos de la regla de Taylor y propusieron diversas modificaciones sobre esta base de referencia.
+[@taylor_discretion_1993] marcó un hito en esta literatura al proponer una regla simple que relaciona la tasa de interés nominal con las desviaciones de la inflación respecto a su nivel objetivo y las desviaciones del producto respecto a su nivel potencial. Su trabajo demostró que las políticas monetarias centradas en estos objetivos son más eficientes que aquellas que se ajustan con la oferta de dinero y el tipo de cambio. [@svensson_inflation_1997] y [@clarida_science_1999] posteriormente formalizaron los fundamentos teóricos de la regla de Taylor y propusieron diversas modificaciones sobre esta base de referencia.
 
 La interacción entre políticas monetaria y fiscal introduce una dimensión adicional al análisis. [@nordhaus_policy_1994] examinó esta interacción desde un marco de teoría de juegos, encontrando que la falta de coordinación entre autoridades puede resultar en equilibrios subóptimos caracterizados por altas tasas de interés y déficits presupuestarios. [@van_aarle_monetary_1995] profundizaron este análisis en el contexto de la estabilización de la deuda, mientras que estudiaron la necesidad de ajuste de la política monetaria para mantener baja inflación en el marco de distintas estructuras de coordinación entre hacedores de política.
 
@@ -100,7 +108,19 @@ La estructura del modelo incorpora diversos canales de transmisión y fuentes de
 Me gustaría incluir un parrafo explicando como este modelo simplificado maneja 
 1) La interaccion entre la deuda gubernamental y el deficit cuasifiscal. 
 2) La existencia de dos emisores gubernamentales. 
+
  -->
+### Equilibrio en el mercado de dinero
+
+El equilibrio en el mercado de dinero se ve representado a través de la Curva de Phillips Neokeynesiana para una economía pequeña y abierta se representa de la siguiente manera:
+
+$$
+\pi_{H,t} = \beta E_t \{\pi_{H,t+1}\} + \kappa\tilde{y}_t - \sigma_a\tilde{g}_t
+$$ {#eq-cp-neokeynesiana}
+
+En la [@eq-cp-neokeynesiana], $\pi_{H,t}$ representa la inflación doméstica, medida como la tasa de variación en el índice de precios de bienes domésticos (IPC). El término $E_t{\pi_{H,t+1}}$ denota las expectativas de inflación doméstica, mientras que $\tilde{y}_t$ representa la brecha del producto doméstico. Esta última se define como la desviación logarítmica del producto doméstico $(y_t)$ respecto a su nivel natural $(y_t^N)$, expresada formalmente como $(\tilde{y} \equiv y_t - y_t^N)$. La variable $\tilde{g}$ corresponde al déficit fiscal, calculado como la diferencia entre la variable de política fiscal $g_t$ y su valor óptimo en ausencia de rigideces nominales $(\tilde{g} \equiv g_t - g_t^N)$.
+
+El parámetro $\kappa$ representa la pendiente de la Curva de Phillips Neokeynesiana y captura la relación fundamental entre la inflación doméstica, las expectativas inflacionarias y la brecha del producto. Específicamente, $\kappa$ revela cómo la dinámica inflacionaria está condicionada por el grado de apertura económica, $\sigma_a$, y la elasticidad de sustitución entre bienes domésticos e importados. 
 
 ### Equilibrio en el mercado de bienes
 
@@ -110,16 +130,258 @@ $$
 \hat{y}_t = E_t\{\hat{y}_{t+1}\} - \frac{1}{\sigma_a}(r_t - E_t\{\pi_{H,t+1}\} - r^N) - E_t\{\Delta\xi_{t+1}\}
 $$ {#eq-is}
 
-La curva IS dinámica @eq-is está influenciada por una combinación de tasas de interés tanto de corto como de largo plazo, donde la tasa de interés real natural $r^N$ sirve como punto de referencia para evaluar la postura de la política monetaria. La autoridad monetaria tiene dos vías para influir en esta tasa. En primer lugar, puede utilizar ajustes en la tasa de interés nominal de corto plazo como herramienta para controlar las fluctuaciones del producto y mantener la inflación doméstica dentro de los límites establecidos. En segundo lugar, cuando los bonos no son perfectamente sustituibles entre sí, emerge un mecanismo adicional de transmisión de la política monetaria que puede afectar la demanda agregada, como sucede en el caso dominicano. 
+La curva IS dinámica @eq-is está influenciada por una combinación de tasas de interés tanto de corto como de largo plazo, donde la tasa de interés real natural $r^N$ sirve como punto de referencia para evaluar la postura de la política monetaria. La autoridad monetaria tiene dos vías para influir en esta tasa. Dicha tasa queda descrita por la siguiente ecuación:
+
+$$
+\partial_t^N = \sigma_a(E_i\{y_{i+1}^N\} - y_i^N) - \alpha(\omega-1)(\rho_{c^*} - 1)c_t^* = r_i^N = \frac{\sigma_a(1+\phi)(\rho_a-1)}{\sigma_a + \phi}a_i + \frac{\phi\alpha(\omega-1)}{\sigma_a + \phi}(\rho_c-1)c_i^*
+$$ {#eq-r-natural}
+
+Donde $a_t$ es el nivel natural de productividad y $c_t^*$ son los choques de producto exógenos, y se asumen que siguen un proceso autoregresivo de orden ARIMA(1,0,0). Por otro lado,  asume que en el equilibrio de esta economía abierta con precios flexibles, no debe existir deficit o superávit gubernamental, osea que $g^*-t^* = 0$. 
 
 
-## Derivación de las curvas de reacción bajo un regimen de independencia total.
+En primer lugar, puede utilizar ajustes en la tasa de interés nominal de corto plazo como herramienta para controlar las fluctuaciones del producto y mantener la inflación doméstica dentro de los límites establecidos. En segundo lugar, cuando los bonos no son perfectamente sustituibles entre sí, emerge un mecanismo adicional de transmisión de la política monetaria que puede afectar la demanda agregada, como sucede en el caso dominicano. 
 
-## Derivación de las curvas de reacción bajo un regimen de dominancia fiscal
 
-## Derivación de la curva de reacción bajo un regimen de dominancia monetaria
+### Restricción intertemporal del gobierno consolidado
+
+El presupuesto estatal está limitado por restricciones financieras específicas. Según [@friedman_government_1971], existe una equivalencia entre el gasto gubernamental y la carga impositiva total sobre los ciudadanos. Cuando los gastos estatales exceden la recaudación fiscal, el gobierno recurre a la emisión de deuda y/o al señoriaje para cubrir este déficit. Sin embargo, estas obligaciones financieras eventualmente deberán ser cubiertas mediante una mayor presión fiscal futura. Considerando que el gobierno central es el propietario último del Banco Central, la interacción entre las políticas monetarias y fiscales emerge principalmente de la restricción presupuestaria intertemporal del gobierno consolidado, ya que la deuda de ambas instituciones está fundamentalmente determinada por el valor presente de la recaudación fiscal.
+
+La política fiscal, que puede causar un aumento en el déficit presupuestario actual, será financiada por un aumento en los ingresos fiscales futuros o el valor de las llamadas obligaciones gubernamentales nominales, como el dinero. Esto se conoce como "La Aritmética Monetarista Desagradable" de [@sargent_unpleasant_1981]. En nuestro caso, utilizaremos la versión log-linearizada de la restricción gubernamental planteada por [@fragetta_strategic_2010], que se expresa como:
+
+$$
+\hat{b}_{t+1} = (r_t - r_t^N) + \frac{1}{\beta}(\hat{b}_t - \pi_{H,t} + \frac{\bar{C}}{\bar{B}}\hat{g}_t + \frac{1-\bar{C}-\tau}{\bar{B}}\hat{y}_t)
+$$ {#eq-aritmetica-desagradable}
+
+En [@eq-aritmetica-desagradable], $b_t = \log\left(\frac{B_t}{P_{H,t+1}}\right)$ donde $B$ es el stock de deuda nominal. $\bar{B}$ y $\bar{C}$ representan la razón deuda/PIB en estado estacionario y la razón consumo/PIB en estado estacionario respectivamente. $\tau$ es la tasa fija de impuesto sobre la renta.
+
+{{< pagebreak >}}
+
+## Juegos de política monetaria y fiscal
+
+En esta sección, analizaremos la interacción entre las autoridades monetarias y fiscales se analiza mediante modelos de teoría de juegos. Estos juegos involucran dos jugadores: el Banco Central como autoridad monetaria y el Ministerio de Hacienda como autoridad fiscal.Cada uno con sus propios instrumentos: la tasa de interés $r_t$ y el gasto gubernamental $g_t$ respectivamente. El juego entre las políticas monetarias y fiscales se fundamenta en la propensión de cada autoridad a minimizar su función de pérdida. La naturaleza de esta interacción puede ser no cooperativa, cuando actúan independientemente, o cooperativa, cuando coordinan sus acciones. Sin embargo, dicha interacción esta sujeta a los límites de la economía hipotética planteados mediante las ecuaciones [@eq-is], [@eq-cp-neokeynesiana] y [@eq-aritmetica-desagradable]. Las reglas de política óptimas (estrategias) de los responsables de las políticas monetarias y fiscales se derivan con base en estas ecuaciones.
+
+Las autoridades derivan funciones de reacción óptimas para diversos regímenes de coordinación, sujetas a las condiciones de equilibrio de la economía. Este proceso implica un compromiso con reglas óptimas que exhiben propiedades de consistencia temporal. El marco analítico implementa el enfoque general de política lineal-cuadrática introducido por [@giannoni_optimal_2003], que resuelve las optimizaciones mediante el enfoque de la técnica de Lagrange . La validez de esta metodología se fundamenta en tres aspectos cruciales: la consistencia con el equilibrio deseado bajo compromiso, la invariabilidad temporal de las reglas de política, y la preservación de la optimalidad independientemente de las perturbaciones exógenas que afecten a la economía. [@saulo_fiscal_2013]
+
+Para nuestros jugadores, sus la forma funcional de sus funciones de pérdida son una representación del objetivo de cada institución. De manera general, las funciones de pérdida penalizan la varianza de las variables de interés con respecto a sus valores de equilibrio o meta. Dichas funciones se expresan como:
+
+### Función de pérdidas del Banco Central
+
+$$
+L_t^M = \gamma_{\pi}Var(\pi_t) + \gamma_{y}Var(\tilde{y}_t) + \gamma_{r}Var(r_t - r^*)
+$$ {#eq-fp-bc}
+
+Los parámetros $\gamma$ representan la sensibilidad del Banco Central a la varianza de la respectiva variable. Estos son definidos positivos y se asume que $\gamma_{\pi} + \gamma_{y} + \gamma_{r} =1$. 
+
+### Función de pérdidas del Ministerio de Hacienda
+
+$$
+L_t^F = \rho_{\pi}Var(\pi_t) + \rho_yVar(\tilde{y}_t) + \rho_gVar(\tilde{g}_t)
+$$ {#eq-fp-mh}
+
+Los parámetros $\rho$ representan la sensibilidad del Ministerio de Hacienda a la varianza de la respectiva variable. Estos son definidos positivos y se asume que $\rho_{\pi} + \rho_{y} + \rho_{g} =1$.
+
+### Juego normal
+
+En el contexto donde los responsables de políticas monetarias y fiscales establecen sus instrumentos de manera simultánea y no cooperativa, se implementa un modelo de juego en forma normal. Cada uno con acciones disponibles específicas y funciones de utilidad que asignan valores reales a cada posible resultado. La solución más relevante en este contexto es el equilibrio de Nash, una situación en la cual ningún jugador puede mejorar su posición mediante desviaciones unilaterales de su estrategia de equilibrio.
+
+#### Derivación de las curvas de reacción bajo un regimen de independencia total.
+
+El objetivo del Banco Central es resolver el siguiente problema de optimización:
+\gamma_{\pi}Var(\pi_t) + \gamma_{y}Var(\tilde{y}_t) + \gamma_{r}Var(r_t - r^*)
+$$
+\min_{r_t} E_0 \left(\frac{1}{2}\sum_{t=0}^{\infty} \beta^{t} \left(L_{t}^{M}\right)\right)
+$$ {#eq-nash-bc-opt}
+
+sujeto a [@eq-is] y [@eq-cp-neokeynesiana]
+
+Este problema de optimización se puede expresar en su forma lagrangiana, que resulta en:
+$$
+L = E_0 \left[\sum_{t=0}^{\infty}\beta^t \begin{pmatrix}
+\frac{1}{2}\gamma_{\pi}Var(\pi_t)  + \frac{1}{2}\gamma_yVar(\tilde{y}_t) + \frac{1}{2}\gamma_rVar(r_t - r^*)\\
++\Lambda_{1,t}\left(\tilde{y}_t - \tilde{y}_{t+1} + \frac{1}{\sigma_{\alpha}}((r_t-r_t^N)-\pi_{H,t+1}) + \bar{g}_{t+1} - \bar{g}_t\right) \\
++\Lambda_{2,t}\left(\pi_{H,t} - \beta\pi_{H,t+1} - \kappa\tilde{y}_t + \sigma_{\alpha}\bar{g}_t - \varepsilon_t^{\pi}\right)
+\end{pmatrix}\right]
+$$
+
+<!-- Par resolver el lagrangiano, hay que obtener las condiciones de primer orden al derivar el lagrangiano respecto a $(r_t-r^*)$, $\tilde{y}_t$ y $\pi_{H,t}$. Como habiamos planteado previamente, nuestros agentes realizan politica no discrecional. Por lo tanto, podemos asumir el agente no toma en cuenta las expectativas futuras ya que este determina una regla en el pasado para adeherirse [@tetik_evaluation_2021]. Tomando eso en cuenta, nuestras condiciones de primer orden son:
+
+$$
+\frac{dL}{d\pi_{H,t}} = \gamma_{\pi}\pi_{H,t} - \beta^{-1}\sigma_{\alpha}^{-1}\Lambda_{1,t-1} + \Lambda_{2,t} - \beta^{-1}\beta\Lambda_{2,t-1} = 0
+$$
+
+$$
+\frac{dL}{d\tilde{y}_t} = \gamma_y\tilde{y}_t + \Lambda_{1,t} - \beta^{-1}\Lambda_{1,t-1} - \kappa\Lambda_{2,t} = 0
+$$
+
+$$
+\frac{dL}{d(r_t-r^*)} = \gamma_r(r_t-r^*) + \sigma_{\alpha}^{-1}\Lambda_{1,t} = 0
+$$ 
+-->
+
+Para resolver el lagrangiano, hay que obtener las condiciones de primer orden al derivar el lagrangiano respecto a $(r_t-r^*)$, $\tilde{y}_t$ y $\pi_{H,t}$. Al resolver este sistema de ecuaciones partiendo de las condiciones de primer orden, y despejar la tasa de interés nominal, obtenemos la regla de política monetaria optima:
+
+$$
+r_t^{NCN} = \Theta_{r,1}r_{t-1} - \Theta_{r,2}r_{t-2} + \Theta_{\pi,r}\pi_{H,t} + \Theta_{1,y}\tilde{y}_t - \Theta_{1,y}\tilde{y}_{t-1} - \Theta_{r}r^*
+$$ {#eq-regla-optima-bc-ncn}
+
+Donde los coeficientes $\Theta_{r,i}$ se describen como:
+$$
+\Theta_{r,1} = \frac{(\sigma_{\alpha}\kappa+\beta+1)}{\beta}, \Theta_{r,2} = \frac{1}{\beta}, \Theta_{\pi,r} = \frac{\gamma_{\pi}\kappa}{\gamma_r\sigma_{\alpha}}, \Theta_{1,y} = \Theta_{y,n} = \frac{\gamma_y}{\gamma_r\sigma_{\alpha}}, \text{ and } \Theta_r = \frac{\sigma_{\alpha}\kappa}{\beta}
+$$
+
+Por el lado del Ministerio de Hacienda, su objetivo es resolver el siguiente problema de optimización:
+
+$$
+\min_{g_t} E_0 \left(\frac{1}{2}\sum_{t=0}^{\infty} \beta^{t} \left(L_{t}^{F}\right)\right)
+$$ {#eq-nash-mh-opt}
+
+sujeto a [@eq-is], [@eq-cp-neokeynesiana] y [@eq-aritmetica-desagradable]
+
+Que en su forma lagrangiana, resulta en:
+
+$$
+L = E_0 \left[\sum_{t=0}^{\infty}\beta^t \begin{pmatrix}
+\frac{1}{2}\rho_{\pi}Var(\pi_t) + \frac{1}{2}\rho_yVar(\tilde{y}_t) + \frac{1}{2}\rho_gVar(\tilde{g}_t) \\
++\Lambda_{1,t}\left(\tilde{y}_t - \tilde{y}_{t+1} + \frac{1}{\sigma_{\alpha}}((r_t-r_t^N)-\pi_{H,t+1}) + \bar{g}_{t+1} - \bar{g}_t\right) \\
++\Lambda_{2,t}\left(\pi_{H,t} - \beta\pi_{H,t+1} - \kappa\tilde{y}_t + \sigma_{\alpha}\bar{g}_t - \varepsilon_t^{\pi}\right)\\
++ \Lambda_{3,t}\left((r_t - r_t^N) + \frac{1}{\beta}(\hat{b}_t - \pi_{H,t} + \frac{\bar{C}}{\bar{B}}\hat{g}_t + \frac{1-\bar{C}-\tau}{\bar{B}}\hat{y}_t)\right)
+\end{pmatrix}\right]
+$$
+
+Al resolver el lagrangiano y despejar para la regla de política fiscal óptima $\tilde{g}_t^{NCN}$ obtenemos:
+
+$$
+\begin{split}
+\tilde{g}_t^{NCN} = &-K + \Psi_{g,+1}E_t\{\tilde{g}_{t+1}\} + \Psi_{g,1}\tilde{g}_{t-1} + \Psi_{y,+1}E_t\{\tilde{y}_{t+1}\} - \Psi_{y,0}\tilde{y}_t + \\
+&+ \Psi_{y,1}\tilde{y}_{t-1} - \Psi_{\pi,+1}E_t\{\pi_{H,t+1}\} + \Psi_{\pi,0}\pi_{H,t}
+\end{split}
+$$ {#eq-regla-optima-mh-ncn}
+
+Donde los coeficientes $\Psi_{g,j}$ se describen como:
+
+$$
+\begin{align*}
+\Psi_{g,+1} &= \frac{\beta\sigma_a}{D} \\
+\Psi_{g,1} &= \frac{\sigma_a}{D} \\
+\Psi_{y,+1} &= \frac{\beta\sigma_a\rho_y}{\rho_gD} \\
+\Psi_{y,0} &= \frac{\rho_y\sigma_a(\beta+2)}{\rho_gD} \\
+\Psi_{y,1} &= \frac{\rho_y\sigma_a}{\rho_gD} \\
+\Psi_{\pi,+1} &= \frac{\beta\sigma_a\rho_{\pi}(\sigma_a-\kappa)}{\rho_gD} \\
+\Psi_{\pi,0} &= \frac{\sigma_a\rho_{\pi}(\sigma_a-\kappa)}{\rho_gD}\\
+D &= \beta\sigma_a + \sigma_a + \kappa
+\end{align*}
+$$
+
+y
+
+$$
+K = \frac{\alpha(-\sigma_a + \bar{C}\sigma_a - \bar{C}\kappa + \tau\sigma_a - \bar{B}\sigma_a^2 + \bar{B}\sigma_a\kappa + \bar{B}\beta\sigma_a^2 - \bar{B}\beta\sigma_a\kappa)}{\bar{B}\beta\rho_gD}
+$$
+
+### Juego extensivo
+
+La dinámica secuencial entre las autoridades se modela mediante un juego en forma extensiva, representado por un árbol de decisiones con información perfecta. En este escenario, el jugador que realiza el primer movimiento asume el papel de líder de Stackelberg, mientras que el segundo jugador actúa como seguidor. La solución se obtiene mediante el concepto de equilibrio perfecto en subjuegos, donde el análisis procede desde los nodos terminales hacia el inicio del árbol de decisión.
+
+#### Derivación de las curvas de reacción bajo un regimen de dominancia monetaria
+
+En un regimen de dominancia monetaria, el Banco Central es el lider de Stackelberg. Este resuelve su problema de optimización tomando en consideración la mejor respuesta del Ministerio de Hacienda. La ventaja de elegir primero permite al Banco Central tomar en cuenta la función de reacción fiscal en su proceso de toma de decisiones. Por lo tanto, en esta derivación de la política óptima, el Banco Central toma el resultado del equilibrio de Nash no cooperativo del ministerio de Hacienda, es decir, la regla de política fiscal óptima $\tilde{g}_t^{NCN}$ @eq-regla-optima-mh-ncn y la sustituye por $\tilde{g}$ en las restricciones del lagrangiano. Esto se sustenta porque la regla de política fiscal óptima es la mejor respuesta por parte de Hacienda en el subjuego. 
+
+En la segunda etapa del juego, el Banco Central tiene que resolver el siguiente problema de optimización tomando en cuenta el resultado perfecto en subjuegos del Ministerio de Hacienda:
+$$
+\min_{r_t} E_0 \left(\frac{1}{2}\gamma_{\pi}Var(\pi_t)  + \frac{1}{2}\gamma_yVar(\tilde{y}_t) + \frac{1}{2}\gamma_rVar(r_t - r^*)\right)
+$$ {#eq-nash-bc-opt}
+
+Que al sustituir los valores $\pi_t$ por @eq-cp-neokeynesiana, $\tilde{y}_t$ por @eq-is y $\tilde{g}$ por $\tilde{g}_t^{NCN}$, obtenemos un problema de optimización no restringida con respecto a $(r_t - r^*)$ se expresa como:
+
+$$
+O = E_0 \left\{\sum_{t=0}^{\infty} \beta^t \begin{pmatrix}
+\frac{1}{2}\gamma_{\pi}(\beta\pi_{H,t+1} + \kappa\tilde{y}_t + \sigma_{\alpha}\tilde{g}_t^{BR} + \varepsilon_t^{\pi})^2 \\
++ \frac{1}{2}\gamma_y\left(\tilde{y}_{t+1} - \frac{1}{\sigma_{\alpha}}(r_t - \pi_{H,t+1} - r^N) - \tilde{g}_{t+1} + \tilde{g}_t^{BR}\right)^2 \\
++ \frac{1}{2}\gamma_r(r_t - r^*)^2
+\end{pmatrix}\right\}
+$$
+
+El resultado de susodicho proceso de optimización es la siguiente regla óptima de tasas de interés:
+
+$$
+\begin{split}
+r_t^{ML} = K &-\Upsilon_{g,+1}E_t \{\tilde{g}_{t+1}\} + \Upsilon_{g,1}\tilde{g}_{t-1} + \Upsilon_{y,+1}E_t \{\tilde{y}_{t+1}\} \\
+&- \Upsilon_{y,0}\tilde{y}_t + \Upsilon_{y,1}\tilde{y}_{t-1} + \Upsilon_{\pi,+1}E_t \{\pi_{t+1}\} - \Upsilon_{\pi,0}\pi_t + r^* + \Upsilon_{r^N,0}\upsilon_t^N
+\end{split}
+$$ {#eq-regla-optima-bc-stack}
+
+Donde, para simplificación, usamos:
+
+$$
+\begin{align}
+\Upsilon_{g,+1} &= \frac{\gamma_y\sigma_a(\kappa+\sigma_a)}{V} \\
+\Upsilon_{g,1} &= \frac{\gamma_y\sigma_a^2}{V} \\
+\Upsilon_{y,+1} &= \frac{\gamma_y\sigma_a(\rho_g\kappa+\rho_g\beta\sigma_a+\rho_g\sigma_a+\beta\sigma_a\rho_g)}{\rho_gV} \\
+\Upsilon_{y,0} &= \frac{\gamma_y\rho_g\sigma_a^2(\beta+2)}{\rho_gV} \\
+\Upsilon_{y,1} &= \frac{\gamma_y\rho_g\sigma_a^2}{\rho_gV} \\
+\Upsilon_{\pi,+1} &= \frac{\gamma_y(-\beta\sigma_a^2\rho_{\pi}-\rho_g\beta\sigma_a-\rho_g\sigma_a+\beta\sigma_a^3\rho_{\pi}-\rho_g\kappa)}{\rho_gV} \\
+\Upsilon_{\pi,0} &= \frac{\gamma_y\rho_a\sigma_a^2(\sigma_a-\kappa)}{\rho_gV} \\
+z &= \frac{\gamma_y\sigma_a}{\gamma_y+\gamma_r\sigma_a^2} \\
+\Upsilon_{r^N,0} &= \frac{\gamma_y}{\gamma_r\sigma_a^2+\gamma_y}
+\end{align}
+$$
+
+$$
+K = \frac{\gamma_y\sigma_a\alpha(\sigma_a\bar{\tau}-\sigma_a-\bar{C}\kappa+\sigma_a^2\bar{B}\beta-\sigma_a\bar{B}\beta\kappa-\sigma_a^2\bar{B}+\sigma_a\bar{C}+\sigma_a\bar{B}\kappa)}{\rho_g\bar{B}\beta V}
+$$
+
+$$
+V = \gamma_y\beta\sigma_a+\gamma_y\sigma_a+\gamma_y\kappa+\gamma_y\beta\sigma_a^3+\gamma_r\sigma_a^3+\gamma_y\sigma_a^2\kappa
+$$
+
+
+@eq-regla-optima-bc-stack representa la regla de política monetaria óptima en el juego con liderazgo monetario.  Esta formulación se distingue de la regla de tasa de interés obtenida en el juego no cooperativo de Nash, ya que incorpora respuestas a variables adicionales referentes a la política fiscal. Esto hace que la regla este determinada por múltiples factores: la inflación esperada y actual, la brecha del producto en sus dimensiones esperada, presente y pasada, el gasto gubernamental tanto pasado como esperado, y las tasas de interés de equilibrio y natural. 
+
+#### Derivación de la curva de reacción bajo un regimen de dominancia fiscal
+
+En un regimen de dominancia fiscal, el Ministerio de Hacienda juega como el líder de Stackelberg y el Banco Central como seguidor. Por lo tanto, el Ministerio de Hacienda resuelve su problema de optimización tomando en consideración la mejor respuesta del Banco Central. Es decir, la regla de política monetaria óptima $r_t^{NCN}$ para el juego de Nash no cooperativo. Este resultado, planteado en el problema @eq-regla-optima-bc-ncn, es el equilibrio perfecto en subjuegos para el Banco Central como seguidor. 
+
+En la segunda etapa del juego, el Ministerio de Hacienda intenta resolver problema de optimización, tomando en cuenta las respuestas que pudiera tener Banco Central a sus estrategias.Por lo tanto, optimizando de manera tal que incorpore en su proceso de desicion las reacciones del mismo. Resultando en el siguiente problema:
+
+$$
+O = E_0 \left\{\sum_{t=0}^{\infty}\beta^t\left[
+\begin{array}{l}
+\frac{1}{2}\rho_\pi\left(\beta\pi_{H,t+1}+\kappa\tilde{y}_t+\sigma_a\tilde{g}_t+\varepsilon_t^\pi\right)^2 \\
++\frac{1}{2}\rho_y\left(\tilde{y}_{t+1}-\frac{1}{\sigma_a}\left(r_t^{BR}-\pi_{H,t+1}-r_t^N\right)-\tilde{g}_{t+1}+\tilde{g}_t\right)^2 \\
++\frac{1}{2}\rho_g\tilde{g}_t^2
+\end{array}
+\right]\right\}
+$$
+
+Al resolver el problema de optmiización no restringida, y despejar con respecto a $\tilde{g}_t^{NCN}$ obtenemos la siguiente regla de política fiscal óptima:
+
+$$
+\begin{split}
+\Xi_{\pi,0}\pi_{H,t} &-\Xi_{y,+1}E_t\{\tilde{y}_{t+1}\}+\Xi_{y,0}\tilde{y}_t-\Xi_{y,1}\tilde{y}_{t-1}+w\varepsilon_t^\pi \\
+&+\Xi_{\pi,0}\pi_{H,t}-\Xi_{y,+1}E_t\{\tilde{y}_{t+1}\}+\Xi_{y,0}\tilde{y}_t-\Xi_{y,1}\tilde{y}_{t-1}+w\varepsilon_t^\pi
+\end{split}
+$$ {#eq-regla-optima-mh-stack}
+
+Donde, para simplificación, usamos:
+
+$$
+\begin{align}
+\Xi_{g,+1} &= \frac{\rho_y}{J}, & \Xi_y &= \frac{\rho_y\kappa}{\beta J}, & \Xi_{y'} &= \frac{\rho_g}{\sigma_a J}, & \Xi_{r,1} &= \frac{\rho_y(\sigma_a\kappa+\beta+1)}{\sigma_a\beta J}, & \Xi_{r,2} &= \frac{\rho_y}{\sigma_a\beta J} \\
+\Xi_{\pi,+1} &= \frac{(-\rho_g\sigma_a^2\beta+\rho_y)}{\sigma_a J}, & \Xi_{\pi,0} &= \frac{\rho_y\gamma_y\kappa}{\sigma_a^2\gamma_r J}, & \Xi_{y,+1} &= \frac{\rho_y}{J}, & \Xi_{y,0} &= \frac{(\rho_y\gamma_y+\rho_g\sigma_a^2\gamma_r\kappa)}{\sigma_a^2\gamma_r J}, & \Xi_{y,1} &= \frac{\rho_y\gamma_y}{\sigma_a^2\gamma_r J}
+\end{align}
+$$
+
+Donde,  $w = \frac{\rho_g\sigma_a}{J}$ y $J = \rho_g+\rho_y+\rho_y\sigma_a^2$ se utilizaron para simplificar. 
+
+<!-- ### Juego cooperativo
+
+El escenario cooperativo surge cuando las autoridades monetarias y fiscales coordinan sus acciones para maximizar el bienestar social. La cooperación se manifiesta indirectamente a través de la asignación de ponderaciones positivas a las variables instrumentales de ambas autoridades. Este mecanismo facilita el ajuste directo a las acciones implementadas por la contraparte, convergiendo en la minimización de una función de pérdida común.
+
+Nota: Queda pendiente.  -->
+
 
 ## Calibración paramétrica para la simulación dinámica
+
 
 # Resultados
 
@@ -140,5 +402,7 @@ La curva IS dinámica @eq-is está influenciada por una combinación de tasas de
 ::: {#refs}
 :::
 
-# Appendix
+{{< pagebreak >}}
+
+# Apéndice
 
