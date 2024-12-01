@@ -9,3 +9,4 @@ others/
 .vscode/
 
 /.luarc.json
+test/

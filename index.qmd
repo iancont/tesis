@@ -48,6 +48,9 @@ La posición contraria sostiene que, dada la diferente naturaleza de las funcion
 
 La determinación del régimen óptimo de coordinación económica representa uno de los mayores desafíos de política económica que enfrenta la República Dominicana actualmente. Esta problemática presenta dos dimensiones fundamentales: por un lado, la necesidad de establecer mecanismos efectivos de coordinación entre las autoridades monetarias y financieras, y por otro, la identificación de los instrumentos más adecuados para alcanzar los objetivos de política. La complejidad de este reto radica en la necesidad de adoptar una perspectiva multidimensional que considere los diferentes equilibrios económicos implicados. El mecanismo actual de control de liquidez presenta un dilema fundamental: ¿es preferible mantener una política con mayor costo económico que ha demostrado efectividad en el control de las expectativas cambiarias, o este enfoque representa un riesgo insostenible para las finanzas del Banco Central en el largo plazo? La resolución de esta disyuntiva requiere la consideración de múltiples factores, incluyendo la prima de riesgo por intervención de liquidez, la competencia en los tramos corto y medio de la curva de intereses, y las implicaciones de la "aritmética monetarista desagradable". Como resultado, la búsqueda de un marco institucional óptimo que balancee estos diferentes objetivos y restricciones se mantiene como una pregunta abierta en el diseño de la política económica dominicana.
 
+$$
+\{a}
+$$
 ## Propósito de la Investigación
 
 Este estudio contribuye a la literatura de política económica mediante el análisis de los regímenes de coordinación óptimos entre la política monetaria y fiscal en la República Dominicana, empleando un marco teórico de juegos para una economía pequeña y abierta. La investigación desarrolla un modelo de equilibrio general dinámico y estocástico (DSGE) que incorpora las características fundamentales de la economía dominicana, incluyendo una restricción intertemporal consolidada para las instituciones gubernamentales y un mecanismo de transmisión del tipo de cambio a la inflación. Este enfoque permite examinar las interacciones estratégicas entre las autoridades monetarias y fiscales bajo diferentes escenarios de coordinación, contribuyendo así a la comprensión de las implicaciones del déficit cuasifiscal del Banco Central.
@@ -153,7 +156,9 @@ $$
 $$ {#eq-aritmetica-desagradable}
 
 En [@eq-aritmetica-desagradable], $b_t = \log\left(\frac{B_t}{P_{H,t+1}}\right)$ donde $B$ es el stock de deuda nominal. $\bar{B}$ y $\bar{C}$ representan la razón deuda/PIB en estado estacionario y la razón consumo/PIB en estado estacionario respectivamente. $\tau$ es la tasa fija de impuesto sobre la renta.
-
+$$
+\upsilon
+$$
 {{< pagebreak >}}
 
 ## Juegos de política monetaria y fiscal
@@ -357,7 +362,7 @@ Al resolver el problema de optmiización no restringida, y despejar con respecto
 
 $$
 \begin{split}
-\Xi_{\pi,0}\pi_{H,t} &-\Xi_{y,+1}E_t\{\tilde{y}_{t+1}\}+\Xi_{y,0}\tilde{y}_t-\Xi_{y,1}\tilde{y}_{t-1}+w\varepsilon_t^\pi \\
+$\tilde{g}_t^{NCN}$ =\Xi_{\pi,0}\pi_{H,t} &-\Xi_{y,+1}E_t\{\tilde{y}_{t+1}\}+\Xi_{y,0}\tilde{y}_t-\Xi_{y,1}\tilde{y}_{t-1}+w\varepsilon_t^\pi \\
 &+\Xi_{\pi,0}\pi_{H,t}-\Xi_{y,+1}E_t\{\tilde{y}_{t+1}\}+\Xi_{y,0}\tilde{y}_t-\Xi_{y,1}\tilde{y}_{t-1}+w\varepsilon_t^\pi
 \end{split}
 $$ {#eq-regla-optima-mh-stack}
