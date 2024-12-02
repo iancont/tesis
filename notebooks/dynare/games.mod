@@ -141,16 +141,25 @@ g = -CONS + PSI_G_PLUS*g(+1) + PSI_G_LAG*g(-1) + PSI_Y_PLUS*y(+1) - PSI_Y_0*y + 
 
 @#if REGIME == 2
 % Regime 2: Modified Monetary-Led Policy
-#V = GAMMA_Y*BETA*sigma_alpha + GAMMA_Y*sigma_alpha + GAMMA_Y*kappa_upsilon + GAMMA_Y*BETA*sigma_alpha^3 + GAMMA_R*sigma_alpha^3 + GAMMA_Y*sigma_alpha^2*kappa_upsilon;
+#V = GAMMA_Y*BETA*sigma_alpha + GAMMA_Y*sigma_alpha + GAMMA_Y*kappa_upsilon + GAMMA_R*BETA*sigma_alpha^3 + GAMMA_R*sigma_alpha^3 + GAMMA_R*sigma_alpha^2*kappa_upsilon;
+
 #UPSILON_G_PLUS = (GAMMA_Y*sigma_alpha*(kappa_upsilon+sigma_alpha))/V;
+
 #UPSILON_G_LAG = (GAMMA_Y*sigma_alpha^2)/V;
-#UPSILON_Y_PLUS = (GAMMA_Y*sigma_alpha*(RHO_G*kappa_upsilon+RHO_G*BETA*sigma_alpha+RHO_G*sigma_alpha+BETA*sigma_alpha*RHO_G))/(RHO_G*V);
-#UPSILON_Y_0 = (GAMMA_Y*RHO_G*sigma_alpha^2*(BETA+2))/(RHO_G*V);
-#UPSILON_Y_LAG = (GAMMA_Y*RHO_G*sigma_alpha^2)/(RHO_G*V);
-#UPSILON_PI_PLUS = (GAMMA_Y*(-BETA*sigma_alpha^2*RHO_PI-RHO_G*BETA*sigma_alpha-RHO_G*sigma_alpha+BETA*sigma_alpha^3*RHO_PI-RHO_G*kappa_upsilon))/(RHO_G*V);
-#UPSILON_PI_0 = (GAMMA_Y*RHO_ALPHA*sigma_alpha^2*(sigma_alpha-kappa_upsilon))/(RHO_G*V);
+
+#UPSILON_Y_PLUS = (GAMMA_Y*sigma_alpha*(ZETA_G*kappa_upsilon+ZETA_G*BETA*sigma_alpha+ZETA_G*sigma_alpha+BETA*sigma_alpha*ZETA_Y))/(ZETA_G*V);
+
+#UPSILON_Y_0 = (GAMMA_Y*ZETA_G*sigma_alpha^2*(BETA+2))/(ZETA_G*V);
+
+#UPSILON_Y_LAG = (GAMMA_Y*ZETA_Y*sigma_alpha^2)/(ZETA_G*V);
+
+#UPSILON_PI_PLUS = (GAMMA_Y*(-BETA*sigma_alpha^2*ZETA_PI-ZETA_G*BETA*sigma_alpha-ZETA_G*sigma_alpha+BETA*sigma_alpha^3*ZETA_PI-ZETA_G*kappa_upsilon))/(ZETA_G*V);
+
+#UPSILON_PI_0 = (GAMMA_Y*ZETA_PI*sigma_alpha^2*(sigma_alpha-kappa_upsilon))/(ZETA_G*V);
+
 #UPSILON_RN = GAMMA_Y/(GAMMA_R*sigma_alpha^2+GAMMA_Y);
-#K = (GAMMA_Y*sigma_alpha*ALPHA*(sigma_alpha*TAU-sigma_alpha-C_BAR*kappa_upsilon+sigma_alpha^2*B_BAR*BETA-sigma_alpha*B_BAR*BETA*kappa_upsilon-sigma_alpha^2*B_BAR+sigma_alpha*C_BAR+sigma_alpha*B_BAR*kappa_upsilon))/(RHO_G*B_BAR*BETA*V);
+
+#K = (GAMMA_Y*sigma_alpha*ALPHA*(sigma_alpha*TAU-sigma_alpha-C_BAR*kappa_upsilon+sigma_alpha^2*B_BAR*BETA-sigma_alpha*B_BAR*BETA*kappa_upsilon-sigma_alpha^2*B_BAR+sigma_alpha*C_BAR+sigma_alpha*B_BAR*kappa_upsilon))/(ZETA_G*B_BAR*BETA*V);
 
 [name='Modified Monetary-Led Policy Rule']
 r = K - UPSILON_G_PLUS*g(+1) + UPSILON_G_LAG*g(-1) + UPSILON_Y_PLUS*y(+1) - UPSILON_Y_0*y + UPSILON_Y_LAG*y(-1) + UPSILON_PI_PLUS*pi(+1) - UPSILON_PI_0*pi + R_BAR + UPSILON_RN*r_nat + xi_r;
@@ -162,24 +171,36 @@ g = -CONS + PSI_G_PLUS*g(+1) + PSI_G_LAG*g(-1) + PSI_Y_PLUS*y(+1) - PSI_Y_0*y + 
 
 @#if REGIME == 3
 % Regime 3: Non-Cooperative Nash Policy
-[name='Monetary Policy Rule (Same as Regime 1)']
+[name='Optimal Monetary Policy Rule']
 r = OMICRON_R_LAG1*r(-1) + OMICRON_R_LAG2*r(-2) + OMICRON_PI*pi + OMICRON_Y*y + OMICRON_Y*y(-1) + OMICRON_R_TAR*R_BAR + xi_r;
 
-#J = RHO_G + ZETA_Y + ZETA_Y*sigma_alpha^2;
+#J = ZETA_G + ZETA_Y + ZETA_PI*sigma_alpha^2;
+
+#W = (ZETA_PI*sigma_alpha)/J;
+
 #XI_G_PLUS = ZETA_Y/J;
-#XI_Y = (ZETA_Y*kappa_upsilon)/(BETA*J);
-#XI_Y_PRIME = RHO_G/(sigma_alpha*J);
-#XI_R_1 = (ZETA_Y*(sigma_alpha*kappa_upsilon+BETA+1))/(sigma_alpha*BETA*J);
-#XI_R_2 = ZETA_Y/(sigma_alpha*BETA*J);
-#XI_PI_PLUS = (-RHO_G*sigma_alpha^2*BETA+ZETA_Y)/(sigma_alpha*J);
+
+#XI_R_BAR = (ZETA_Y*kappa_upsilon)/(BETA*J);
+
+#XI_R_NAT = ZETA_Y/(sigma_alpha*J);
+
+#XI_R_LAG = (ZETA_Y*(sigma_alpha*kappa_upsilon+BETA+1))/(sigma_alpha*BETA*J);
+
+#XI_R_LAG_2 = ZETA_Y/(sigma_alpha*BETA*J);
+
+#XI_PI_PLUS = (-ZETA_PI*sigma_alpha^2*BETA+ZETA_Y)/(sigma_alpha*J);
+
 #XI_PI_0 = (ZETA_Y*GAMMA_Y*kappa_upsilon)/(sigma_alpha^2*GAMMA_R*J);
+
 #XI_Y_PLUS = ZETA_Y/J;
-#XI_Y_0 = (ZETA_Y*GAMMA_Y+RHO_G*sigma_alpha^2*GAMMA_R*kappa_upsilon)/(sigma_alpha^2*GAMMA_R*J);
+
+#XI_Y_0 = (ZETA_Y*GAMMA_Y+ZETA_PI*sigma_alpha^2*GAMMA_R*kappa_upsilon)/(sigma_alpha^2*GAMMA_R*J);
+
 #XI_Y_LAG = (ZETA_Y*GAMMA_Y)/(sigma_alpha^2*GAMMA_R*J);
-#W = (RHO_G*sigma_alpha)/J;
 
 [name='Non-Cooperative Nash Fiscal Policy Rule']
-g = XI_PI_0*pi - XI_Y_PLUS*y(+1) + XI_Y_0*y - XI_Y_LAG*y(-1) + W*xi_pi + XI_PI_0*pi - XI_Y_PLUS*y(+1) + XI_Y_0*y - XI_Y_LAG*y(-1) + W*xi_pi + xi_g;
+g = XI_G_PLUS*g(+1) - XI_R_BAR*R_BAR - XI_R_NAT * r_nat - XI_R_LAG*r(-1) - XI_R_LAG_2*r(-2) - XI_PI_PLUS * pi(+1) + XI_PI_0* pi - XI_Y_PLUS*y(+1) + XI_Y_0*y - XI_Y_LAG*y(-1) + W*xi_pi + xi_g
+;
 
 @#endif
 
@@ -204,3 +225,16 @@ xi_g = RHO_G*xi_g(-1) + eps_g;
 
 end;
 
+%steady_state_model;
+%   y =0;
+%    pi = 0;
+%    b =0;
+%%    r  = 0;
+%    g  = 0;
+%    r_nat  =0;
+%    a  =0;
+%    c_star =0;
+%    xi_pi =0;
+%    xi_r =0;
+%   xi_g  =0;
+%%end;
