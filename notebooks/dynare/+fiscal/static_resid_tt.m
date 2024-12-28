@@ -15,12 +15,12 @@ function T = static_resid_tt(T, y, x, params)
 
 assert(length(T) >= 7);
 
-T(1) = params(2)/(1+params(3)*(params(2)*params(18)+(1-params(3))*(params(2)*params(17)-1)-1));
-T(2) = (1-params(5)*params(1))*(1-params(1))/params(1)*(T(1)+params(4));
+T(1) = params(7)/(1+params(2)*(params(7)*params(10)+(1-params(2))*(params(7)*params(9)-1)-1));
+T(2) = (1-params(1)*params(8))*(1-params(8))/params(8)*(T(1)+params(3));
 T(3) = T(1)^2;
-T(4) = params(12)*T(3);
-T(5) = params(14)/(params(14)+params(16)+T(4));
-T(6) = 1/params(5);
-T(7) = (params(7)-1)*(params(2)*params(18)+(1-params(3))*(params(2)*params(17)-1)-1)*params(3)*params(4)/(T(1)+params(4));
+T(4) = params(14)*T(3);
+T(5) = params(15)/(params(15)+params(16)+T(4));
+T(6) = 1/params(1);
+T(7) = (params(18)-1)*(params(7)*params(10)+(1-params(2))*(params(7)*params(9)-1)-1)*params(2)*params(3)/(T(1)+params(3));
 
 end

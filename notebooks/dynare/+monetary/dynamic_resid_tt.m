@@ -20,15 +20,15 @@ function T = dynamic_resid_tt(T, y, x, params, steady_state, it_)
 
 assert(length(T) >= 10);
 
-T(1) = 1/params(5);
-T(2) = params(2)/(1+params(3)*(params(2)*params(18)+(1-params(3))*(params(2)*params(17)-1)-1));
-T(3) = (1-params(5)*params(1))*(1-params(1))/params(1)*(params(4)+T(2));
+T(1) = 1/params(1);
+T(2) = params(7)/(1+params(2)*(params(7)*params(10)+(1-params(2))*(params(7)*params(9)-1)-1));
+T(3) = (1-params(1)*params(8))*(1-params(8))/params(8)*(params(3)+T(2));
 T(4) = T(2)^2;
-T(5) = params(20)*T(4);
+T(5) = params(5)*T(4);
 T(6) = T(2)^3;
-T(7) = params(13)*T(2)+params(5)*params(13)*T(2)+params(13)*T(3)+params(5)*params(15)*T(6)+params(15)*T(6)+T(3)*params(15)*T(4);
-T(8) = params(13)*T(2)*(params(14)*params(5)*T(2)+params(16)*T(3)+params(5)*params(16)*T(2)+params(16)*T(2))/(params(16)*T(7));
-T(9) = params(13)*(params(12)*(-params(5))*T(4)-params(5)*params(16)*T(2)-params(16)*T(2)+params(12)*params(5)*T(6)-params(16)*T(3))/(params(16)*T(7));
-T(10) = (params(7)-1)*params(3)*params(4)*(params(2)*params(18)+(1-params(3))*(params(2)*params(17)-1)-1)/(params(4)+T(2));
+T(7) = params(12)*T(2)+params(1)*params(12)*T(2)+params(12)*T(3)+params(1)*params(13)*T(6)+params(13)*T(6)+T(3)*params(13)*T(4);
+T(8) = params(12)*T(2)*(params(15)*params(1)*T(2)+params(16)*T(3)+params(1)*params(16)*T(2)+params(16)*T(2))/(params(16)*T(7));
+T(9) = params(12)*(params(14)*(-params(1))*T(4)-params(1)*params(16)*T(2)-params(16)*T(2)+params(14)*params(1)*T(6)-params(16)*T(3))/(params(16)*T(7));
+T(10) = (params(18)-1)*params(2)*params(3)*(params(7)*params(10)+(1-params(2))*(params(7)*params(9)-1)-1)/(params(3)+T(2));
 
 end
