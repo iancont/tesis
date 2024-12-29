@@ -263,7 +263,7 @@ steady;
 check;
 
 %----------------------------------------------------------------
-% Sensibility Analysis
+% Priors distributions
 %----------------------------------------------------------------
 
 varobs y pi b r g;
@@ -300,24 +300,26 @@ estimated_params;
     %stderr eps_g, inv_gamma_pdf, 1.359, 0.387;
 end;
 
-%----------------------------------------------------------------
-% Shock Specifications
-%----------------------------------------------------------------
-dynare_sensitivity(pvalue_ks=0.05);
-
-
 %---------------------------------------------------------------
 % Shock Specifications
 %----------------------------------------------------------------
 shocks;
     var eps_a      = 0.25^2; 
     var eps_c_star = 0.7^2;
-    var eps_pi     = 0.4^2;
-    %var eps_r      = 0.6^2;
-    %var eps_g      = 0.5^2;
+    var eps_pi     = 0.25^2; 
+    var eps_r      = 0.25^2; 
+    var eps_g      = 0.25^2; 
 end;
 
 %----------------------------------------------------------------
 % Impulse Response Analysis
 %----------------------------------------------------------------
-stoch_simul(order=1, irf=10,tex) y pi b r_nat r g;
+stoch_simul(order=1, irf=10,tex, graph_format=(eps,pdf)) y pi b r_nat r g;
+
+%----------------------------------------------------------------
+% Sensibility Analysis
+%----------------------------------------------------------------
+
+dynare_sensitivity;
+identification(tex);
+rplot y pi b r_nat r g;
