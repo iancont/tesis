@@ -1,18 +1,11 @@
 @#define REGIME = 2
 @#include "games.mod"
 
-initval;
-y = 0; %validado
-pi= 0; %validado
-r_nat = 0.04;
-r = r_nat; %validado
-b = 0;
-g = 1;
-a= 0;
-c_star= 0;
-xi_pi= 0;
-xi_r= 0;
-xi_g= 0;
-end;
+theta = 0.01;
+eta = 0.69;
+UPSILON = 1;
+delta_pi = 0.25;
+delta_g = 0.0103303;
+
 
 model_diagnostics;

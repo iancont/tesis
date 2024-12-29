@@ -246,7 +246,7 @@ pi= 0; %validado
 r_nat = 0.04;
 r = r_nat; %validado
 b = 0;
-g = 1;
+g = 0;
 a= 0;
 c_star= 0;
 xi_pi= 0;
@@ -312,14 +312,14 @@ shocks;
 end;
 
 %----------------------------------------------------------------
-% Impulse Response Analysis
-%----------------------------------------------------------------
-stoch_simul(order=1, irf=10,tex, graph_format=(eps,pdf)) y pi b r_nat r g;
-
-%----------------------------------------------------------------
 % Sensibility Analysis
 %----------------------------------------------------------------
 
-dynare_sensitivity;
-identification(tex);
+dynare_sensitivity(graph_format=(eps,pdf));
+identification(advanced=1, graph_format=(eps,pdf));
+
+%----------------------------------------------------------------
+% Impulse Response Analysis
+%----------------------------------------------------------------
+stoch_simul(order=1, irf=10,tex, graph_format=(eps,pdf)) y pi b r_nat r g;
 rplot y pi b r_nat r g;

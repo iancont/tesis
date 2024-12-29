@@ -2,20 +2,16 @@ clear all; close all; clc;
 
 addpath /usr/lib/dynare/matlab/
 
-% dynare nash
-% irfs_nash = oo_.irfs;
-
-
-% close all;
-
-dynare monetary
-irfs_monetary = oo_.irfs;
-
+dynare nash
+irfs_nash = oo_.irfs;
 close all;
 
-% dynare fiscal
-% irfs_fiscal = oo_.irfs;
+dynare fiscal
+irfs_fiscal = oo_.irfs;
+close all;
 
+% dynare monetary
+% irfs_monetary = oo_.irfs;
 % close all;
 
 % % Compare Loss Functions
