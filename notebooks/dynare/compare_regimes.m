@@ -10,8 +10,8 @@ dynare fiscal
 irfs_fiscal = oo_.irfs;
 close all;
 
-% dynare monetary
-% irfs_monetary = oo_.irfs;
+dynare monetary
+irfs_monetary = oo_.irfs;
 % close all;
 
 % % Compare Loss Functions

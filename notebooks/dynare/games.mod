@@ -78,26 +78,26 @@ parameters
 % Calibration
 %----------------------------------------------------------------
 beta = 0.99;
-alpha = 0.43;
-phi = 1;
-tau = 0.0334;
-B_BAR = 0.53;
-C_BAR = 0.70;
-sigma = 1;
+alpha = 0.27;
+phi = 2;
+tau = 0.25;
+B_BAR = 0.21;
+C_BAR = 0.62;
+sigma = 3;
 theta = 0.5;
 eta = 0.69;
 UPSILON = 1;
-gamma_pi = 1.25;
-gamma_y = 0.25;
-gamma_r = 0.7;
-delta_pi = 0.25;
-delta_y = 1.25;
-delta_g = 0.25;
-rho_alpha = 0.5;
-rho_c_star = 0.5;
-rho_pi = 0.5;     % To be confirmed
-rho_r = 0.70;
-rho_g = 0.5;
+gamma_pi = 1;
+gamma_y = 0.4;
+gamma_r = 0.5;
+delta_pi = 0.5;
+delta_y = 1;
+delta_g = 0.2;
+rho_alpha = 0.8;
+rho_c_star = 0.8;
+rho_pi = 0.8;     % To be confirmed
+rho_r = 0.8;
+rho_g = 0.8;
 
 %----------------------------------------------------------------
 % Model Equations (Linear Form)
@@ -270,27 +270,27 @@ varobs y pi b r g;
 
 estimated_params;
     %estimated params
-    sigma, gamma_pdf, 0.969, 0.289;
-    theta, beta_pdf, 0.343, 0.116;
-    eta, gamma_pdf, 1.132, 0.289;
+    sigma, gamma_pdf, 3, 0.289;
+    theta, beta_pdf, 0.5, 0.116;
+    eta, gamma_pdf, 0.69, 0.289;
     UPSILON, gamma_pdf, 1, 0.25;
 
     %central bank
-    gamma_pi, gamma_pdf, 1.25, 0.1;
-    gamma_y, gamma_pdf, 0.25, 0.1;
-    gamma_r, gamma_pdf, 0.7, 0.1;
+    gamma_pi, gamma_pdf, 1, 0.1;
+    gamma_y, gamma_pdf, 0.4, 0.1;
+    gamma_r, gamma_pdf, 0.5, 0.1;
 
     %fiscal authority
-    delta_pi, gamma_pdf, 0.25, 0.1;
-    delta_y, gamma_pdf, 1.25, 0.1;
-    delta_g, gamma_pdf, 0.25, 0.1;
+    delta_pi, gamma_pdf, 0.5, 0.1;
+    delta_y, gamma_pdf, 1, 0.1;
+    delta_g, gamma_pdf, 0.2, 0.1;
 
     % AR(1) 
-    rho_alpha, beta_pdf, 0.626, 0.108;
-    rho_c_star, beta_pdf, 0.5, 0.1;
-    rho_pi, beta_pdf, 0.5, 0.1;
-    rho_r, beta_pdf, 0.5, 0.1;
-    rho_g, beta_pdf, 0.5, 0.1;
+    rho_alpha, beta_pdf, 0.8, 0.108;
+    rho_c_star, beta_pdf, 0.8, 0.1;
+    rho_pi, beta_pdf, 0.8, 0.1;
+    rho_r, beta_pdf, 0.8, 0.1;
+    rho_g, beta_pdf, 0.8, 0.1;
 
     % Stochastic process
     stderr eps_a, inv_gamma_pdf, 2.176, 0.506;
@@ -299,6 +299,7 @@ estimated_params;
     %stderr eps_i, inv_gamma_pdf, 0.498, 0.237;
     %stderr eps_g, inv_gamma_pdf, 1.359, 0.387;
 end;
+
 
 %---------------------------------------------------------------
 % Shock Specifications
